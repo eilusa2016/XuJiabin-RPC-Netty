@@ -4,6 +4,7 @@ import java.lang.annotation.*;
 
 /**
  * 注解RPC服务实现类
+ * CustomScannerRegistrar  CustomScanner中注册了扫描
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

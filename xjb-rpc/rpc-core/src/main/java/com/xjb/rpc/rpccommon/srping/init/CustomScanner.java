@@ -1,10 +1,13 @@
 package com.xjb.rpc.rpccommon.srping.init;
 
+import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
 
 import java.lang.annotation.Annotation;
+import java.util.Set;
 
 /**
  * 从指定包内扫描所有组件bean定义的
@@ -14,12 +17,12 @@ import java.lang.annotation.Annotation;
  *
  * @program: xjb-rpc
  * @description:
- * @author: karl.xu
+ * @author: karl.xu ClassPathBeanDefinitionScanner
  * @create: 2020-10-14 11:45
  */
 public class CustomScanner extends ClassPathBeanDefinitionScanner {
     /**
-     *  查找其中符合条件的bean组件定义并将这些bean组件定义注册到容器。
+     *  查找其中符合条件的bean组件定义并将这些bea添加扫描过滤器。
      * @param registry
      * @param annoType
      */
@@ -36,5 +39,10 @@ public class CustomScanner extends ClassPathBeanDefinitionScanner {
     @Override
     public int scan(String... basePackages) {
         return super.scan(basePackages);
+    }
+
+    @Override
+    protected Set<BeanDefinitionHolder> doScan(String... basePackages) {
+       return super.doScan(basePackages);
     }
 }
