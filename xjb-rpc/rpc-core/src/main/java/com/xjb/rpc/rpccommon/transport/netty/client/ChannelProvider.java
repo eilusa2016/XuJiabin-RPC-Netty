@@ -44,7 +44,7 @@ public class ChannelProvider {
                 channelMap.remove(key);
             }
         }
-        // otherwise, reconnect to get the Channel
+        // channel不存在  或者已经不再活动或者断开的 重新连接
         Channel channel = nettyClient.doConnect(inetSocketAddress);
         channelMap.put(key, channel);
         return channel;
