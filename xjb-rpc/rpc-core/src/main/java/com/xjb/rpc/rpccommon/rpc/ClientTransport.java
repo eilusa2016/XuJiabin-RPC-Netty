@@ -1,5 +1,6 @@
 package com.xjb.rpc.rpccommon.rpc;
 
+import com.xjb.rpc.rpccommon.extension.SPI;
 import com.xjb.rpc.rpccommon.rpc.dto.RpcRequest;
 
 /**
@@ -8,6 +9,7 @@ import com.xjb.rpc.rpccommon.rpc.dto.RpcRequest;
  * @author: karl.xu
  * @create: 2020-10-14 13:51
  */
+@SPI
 public interface ClientTransport {
     /**
      * 发送RPC请求 并且获取结果

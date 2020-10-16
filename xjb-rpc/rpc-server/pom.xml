@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.xjb.rpc</groupId>
-            <artifactId>rpc-common</artifactId>
+            <artifactId>rpc-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

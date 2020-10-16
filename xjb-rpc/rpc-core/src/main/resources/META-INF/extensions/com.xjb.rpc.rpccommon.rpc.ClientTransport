@@ -1,0 +1,2 @@
+nettyClientTransport=com.xjb.rpc.rpccommon.transport.netty.client.NettyClientTransport
+socketRpcClient=com.xjb.rpc.rpccommon.transport.socket.SocketRpcClient

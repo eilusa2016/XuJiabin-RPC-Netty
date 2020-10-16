@@ -19,7 +19,9 @@ import java.net.InetSocketAddress;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * 不需要配置实例化
+ */
 @Slf4j
 public final class NettyClient {
     private final Bootstrap bootstrap;
