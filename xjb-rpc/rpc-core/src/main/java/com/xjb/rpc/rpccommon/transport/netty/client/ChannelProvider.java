@@ -27,6 +27,11 @@ public class ChannelProvider {
         nettyClient = SingletonFactory.getInstance(NettyClient.class);
     }
 
+    /**
+     * 通过以一个地址来连接到这个server并且得到channel
+     * @param inetSocketAddress 服务的地址
+     * @return
+     */
     public Channel get(InetSocketAddress inetSocketAddress) {
         String key = inetSocketAddress.toString();
         // determine if there is a connection for the corresponding address

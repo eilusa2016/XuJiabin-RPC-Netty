@@ -27,7 +27,7 @@ public class ServiceProviderImpl implements  ServiceProvider {
      * key: rpc service name(interface name + version + group)
      * value: service object
      */
-    private final Map<String, Object> serviceMap;
+    private final Map<String, Object> serviceMap;//存档服务实现类的列表
     private final Set<String> registeredService;
     private final ServiceRegistry serviceRegistry;
 
@@ -71,6 +71,7 @@ public class ServiceProviderImpl implements  ServiceProvider {
             String serviceName = serviceRelatedInterface.getCanonicalName();
             rpcServiceProperties.setServiceName(serviceName);
             this.addService(service, serviceRelatedInterface, rpcServiceProperties);
+//            注册服务  在zK生成节点
             serviceRegistry.registerService(rpcServiceProperties.toRpcServiceName(), new InetSocketAddress(host, NettyServer.PORT));
         } catch (UnknownHostException e) {
             log.error("occur exception when getHostAddress", e);

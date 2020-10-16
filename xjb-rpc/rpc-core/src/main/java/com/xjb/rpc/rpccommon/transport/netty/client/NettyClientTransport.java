@@ -41,7 +41,7 @@ public class NettyClientTransport implements ClientTransport {
         String rpcServiceName = rpcRequest.toRpcProperties().toRpcServiceName();
         // get server address
         InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcServiceName);
-        // get  server address related channel
+        // 通过以一个地址来连接到这个server并且得到channel
         Channel channel = channelProvider.get(inetSocketAddress);
         if (channel != null && channel.isActive()) {
             // put unprocessed request
