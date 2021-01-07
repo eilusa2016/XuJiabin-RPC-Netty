@@ -13,7 +13,6 @@ public class MainFace {
 	public static void main(String[] args) {
 
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-
     	// 实例化相机
         VideoCapture videoCapture = new VideoCapture();
         // 如果要从摄像头获取视频 则要在 VideoCapture 的构造方法写 0
